@@ -2,6 +2,10 @@
 
 A PyTorch implementation comparing traditional ID-based and semantic-based recommendation models on the Amazon Beauty dataset. This project explores how semantic representations of items can improve recommendation performance, particularly for cold-start scenarios.
 
+This accompanies the blog posts:
+- [Semantic Ids for Recommendation Systems: A Practical Study](https://januverma.substack.com/p/semantic-ids-for-recommendation-systems-88b)
+- [Semantic Ids for Recommendation Systems: A Technical Deep Dive](https://januverma.substack.com/p/semantic-ids-for-recommendation-systems)
+
 ## Overview
 
 This repository implements and compares multiple recommendation approaches:
@@ -190,6 +194,20 @@ The semantic ID generation follows this pipeline:
 5. **Storage**: Saves both the semantic IDs and trained codebooks for reproducibility
 
 The resulting 4-level semantic IDs can be used as compositional item representations in recommendation models.
+
+## Citation
+
+If you use this code or find it helpful in your research, please cite:
+
+```bibtex
+@misc{semantic-ids-recsys,
+  title={Semantic IDs for Recommendation Systems: A Practical Study},
+  author={Janu Verma},
+  year={2025},
+  url={https://januverma.substack.com/p/semantic-ids-for-recommendation-systems-88b},
+  note={PyTorch implementation comparing traditional ID-based and semantic-based recommendation models}
+}
+```
 
 ## Contributing
 
