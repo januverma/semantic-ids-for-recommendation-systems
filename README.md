@@ -26,11 +26,10 @@ This repository implements and compares multiple recommendation approaches:
 │   ├── meta.json.gz             # Item metadata
 │   ├── rating_splits_augmented.pkl  # Train/val/test splits
 │   ├── datamaps.json            # User/item ID mappings
-│   ├── semantic_ids_fixed.json  # Generated semantic ID mappings
-│   ├── semantic_codebooks.pkl   # Trained quantization codebooks
 │   └── sequential_data.txt      # Sequential interaction data
 ├── semantic_id_generator.py     # Main semantic ID generation module and script
 ├── analyze_semantic_ids.py      # Analysis and visualization of semantic IDs
+├── convert_semantic_ids.py      # Convert integer keys to ASIN keys in semantic Ids dictionary
 ├── mf_train_eval.py             # Training script for MF models
 ├── neural_train_eval.py         # Training script for neural models
 ├── tiger_train_eval.py          # Training script for TIGER model
@@ -101,6 +100,16 @@ This will:
 - Generate plots in the `plots/` directory
 - Show usage examples for model integration
 
+### 3. Convert Semantic IDs keys (Required)
+
+Convert keys in the generated semantic Ids from integer to ASIN so that it can be used in downstream tasks.
+
+```bash
+python convert_semantic_ids.py
+```
+This will:
+- Convert the keys in the `beauty/semantic_ids.json` from integers to ASIN and write in `beauty/semantic_ids_fixed.json`
+
 ### 3. Train Recommendation Models
 
 #### Matrix Factorization Models
@@ -133,12 +142,11 @@ python tiger_train_eval.py
 ```
 
 ## Data Format
-
+Download preprocessed data from this [Google Drive link](https://drive.google.com/file/d/1qGxgmx7G_WB7JE4Cn_bEcZ_o_NAJLE3G/view?usp=sharing) which is processed by [P5](https://github.com/jeykigung/P5) project, extract the beauty data, and then put the into the `beauty` folder. I
 The project expects the Amazon Beauty dataset in the following format:
 - `meta.json.gz`: Item metadata including categories, brand, description
 - `rating_splits_augmented.pkl`: Pre-split rating data (train/val/test)
 - `datamaps.json`: User/item ID mappings
-- `semantic_ids_fixed.json`: Multi-level semantic codes for items
 
 ## Key Features
 
