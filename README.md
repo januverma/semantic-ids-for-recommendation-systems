@@ -8,6 +8,7 @@ This repository implements and compares multiple recommendation approaches:
 
 1. **Matrix Factorization (MF) Models**: Traditional collaborative filtering with user/item embeddings vs semantic item representations
 2. **Neural CTR Models**: Deep learning models (WDL, DeepFM, DLRM) comparing baseline item features vs semantic encodings
+3. **Sequential Models**: Transformer based models for next-item prediction.
 
 ## Project Structure
 
@@ -48,6 +49,11 @@ This repository implements and compares multiple recommendation approaches:
 - **WDL (Wide & Deep Learning)**: Combines wide linear model with deep neural networks
 - **DeepFM**: Deep factorization machine with first-order, second-order, and deep components
 - **DLRM (Deep Learning Recommendation Model)**: Facebook's recommendation model with categorical feature interactions
+
+### Sequential Models
+
+- **SASRec (Self-attention for Sequential Recommendation)**: Uses a transformer model for classification over candidates.
+- **TIGER (Transformer Index for GEnerative Recommenders)**: Uses a transformer model to generate the next item.
 
 Each neural model supports two modes:
 - **Baseline**: Uses traditional item IDs and metadata features
